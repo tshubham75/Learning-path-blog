@@ -1,0 +1,4 @@
+<h3>Blog Info</h3>
+<p class="mx-auto"><strong>Title</strong> <%= @blog_post.title %></p>
+<p><strong>Body</strong> <%= @blog_post.body %></p>
+<%= link_to "Edit", edit_blog_post_path(@blog_post) if user_signed_in? %>

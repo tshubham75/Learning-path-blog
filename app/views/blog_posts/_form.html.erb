@@ -1,0 +1,21 @@
+<div class="form">
+  <%= form_with model: blog_post do |form|%>
+    <% if form.object.errors.any? %>
+      <div class="errorShow">
+        <% form.object.errors.full_messages.each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="username">
+      <%= form.label :title%>
+      <%= form.text_field :title%>
+    </div>
+    <div class="password">
+      <%= form.label :body%>
+      <%= form.text_area :body%>
+    </div>
+    <%= form.button%>
+  <% end %>
+</div>
+<%# its not the full html code/form its just a partial or portion of the page %>

@@ -1,0 +1,11 @@
+<h2>Edit Blog post</h2>
+<%= render partial: "form", locals: {blog_post: @blog_post}%>
+<%# in the above line we added blog_pst variable assign value and 
+this value added in form partial file in form erb as a variable for access %>
+<%# local variable assig instant arriable %>
+<%= button_to "Delete",@blog_post, method: :delete, data: {turbo_confirm: "Are you sure ?"} %>
+<%# {turbo_confirm: "Are you sure ?"} javascript method for rails 7 and higher this is hotwire 
+turbo liberay  , %>
+<%# the @blog_post must nessacery so its identify which elemet or a record want to delete  %>
+<%# link_to only to make A GET REQUEAT only  %>
+<%# in html we see which type of http request we sending which assign value of value tag in html (value:"patch"") %>
