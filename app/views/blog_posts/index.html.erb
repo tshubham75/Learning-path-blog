@@ -1,7 +1,12 @@
 <h1>My Blog</h1>
 <% @blog_posts.each do |blog_post|%>
   <div>
-    <h3 class="prose"><%= link_to blog_post.title, blog_post %></h3>
+    <% if blog_post.draft? %>
+      <div class="p-2 rounded text-gray-900 bg-gray-100 prose">Draft</div>
+    <% else blog_post.schedule?%>
+      <div class="p-2 rounded text-gray-900 bg-blue-100 prose">schedule..</div>
+    <% end %>
+    <h3><%= link_to blog_post.title, blog_post %></h3>
     <%# <h3>= link_to blog_post.title,"/blog_posts_path{blog_post.id}"</h3> %>
     <%#= blog_post.body%>
   </div>
